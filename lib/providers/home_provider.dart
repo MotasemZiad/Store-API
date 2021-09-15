@@ -13,6 +13,22 @@ class HomeProvider extends ChangeNotifier {
   List<ProductResponse> cartProducts = [];
   List<ProductResponse> favoriteProducts = [];
 
+  login(String email, String password, String fcmToken) {
+    ApiHelper.apiHelper.login(email, password, fcmToken);
+  }
+
+  register(
+    String firstName,
+    String lastName,
+    String email,
+    String password,
+    String phone,
+    String fcmToken,
+  ) {
+    ApiHelper.apiHelper
+        .register(firstName, lastName, email, password, phone, fcmToken);
+  }
+
   getAllProducts() async {
     List<dynamic> products = await ApiHelper.apiHelper.getAllProducts();
     allProducts = products.map((e) => ProductResponse.fromJson(e)).toList();

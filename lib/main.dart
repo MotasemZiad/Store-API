@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:store_api/data/db_helper.dart';
+import 'package:store_api/data/sp_helper.dart';
 import 'package:store_api/helpers/route_helper.dart';
 import 'package:store_api/providers/home_provider.dart';
 import 'package:store_api/ui/screens/cart_screen.dart';
@@ -15,6 +16,7 @@ import 'package:store_api/utils/constants.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DbHelper.dbHelper.initDatabase();
+  await SpHelper.spHelper.initSharedPreferences();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       statusBarColor: primaryColor,

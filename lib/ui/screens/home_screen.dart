@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:store_api/data/sp_helper.dart';
 import 'package:store_api/helpers/route_helper.dart';
 import 'package:store_api/providers/home_provider.dart';
 import 'package:store_api/shared/widgets/global_widgets.dart';
@@ -36,6 +37,15 @@ class HomeScreen extends StatelessWidget {
             ),
             onPressed: () {
               RouteHelper.routeHelper.pushNamed(CartScreen.routeName);
+              // Provider.of<HomeProvider>(context, listen: false)
+              //     .login('moatasem.abunema@gmail.com', '12341234', 'fcmToken');
+              // Provider.of<HomeProvider>(context, listen: false).register(
+              //     'Angela',
+              //     'Yu',
+              //     'angela@gmail.com',
+              //     '12341234',
+              //     '+109866374',
+              //     'fcmToken3');
             },
           ),
         ],
